@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro | Inventarios</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="login-page">
+
+  <div class="login-container">
+    <div class="login-card register-card">
+      <h2>Crear Cuenta</h2>
+      <p>Regístrate para acceder al sistema</p>
+
+     <form action="/register" method="POST">
+
+  <div class="input-group">
+    <label>Nombre</label>
+    <input type="text" name="nombre" required>
+  </div>
+
+  <div class="input-group">
+    <label>Email</label>
+    <input type="email" name="email" required>
+  </div>
+
+  <div class="input-group">
+    <label>Contraseña</label>
+    <input type="password" name="password" required>
+  </div>
+
+  <div class="input-group">
+    <label>Confirmar contraseña</label>
+    <input type="password" name="confirm" required>
+  </div>
+
+  <button type="submit">Registrarse</button>
+</form>
+
+
+      <div class="footer">
+        <span>¿Ya tienes cuenta?</span>
+        <a href="/login.html">Iniciar sesión</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
