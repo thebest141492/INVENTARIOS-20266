@@ -3,55 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <title>Dashboard | Inventarios</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body class="dashboard-page">
 
-<h1 class="title">Menú de Navegación</h1>
+<header class="dashboard-header">
+  <h1 class="title">📊 Panel de Control</h1>
+  <p class="subtitle">Gestión de inventarios</p>
+</header>
 
-<div class="carousel-container">
+<section class="dashboard-grid">
 
-  <button class="nav-btn left" onclick="prevCard()">❮</button>
-
-  <div class="carousel">
-    <div class="card active" data-link="/inventario.html">
-      <div class="icon">📦</div>
-      <h2>Inventario</h2>
-      <p>Gestiona tu inventario.</p>
-    </div>
-
-    <div class="card" data-link="/catalogo.html">
-      <div class="icon">📚</div>
-      <h2>Catálogo</h2>
-      <p>Productos disponibles.</p>
-    </div>
-
-    <div class="card" data-link="/entradas.html">
-      <div class="icon">⬇️</div>
-      <h2>Entradas</h2>
-      <p>Ingreso de mercancía.</p>
-    </div>
-
-    <div class="card" data-link="/salidas.html">
-      <div class="icon">⬆️</div>
-      <h2>Salidas</h2>
-      <p>Salida de productos.</p>
-    </div>
-
-    <div class="card admin-only" data-link="/admin-usuarios.html">
-      <div class="icon">🧑‍💼</div>
-      <h2>Usuarios</h2>
-      <p>Administrar usuarios.</p>
-    </div>
+  <div class="dashboard-card" data-link="/inventario.html">
+    <div class="icon">📦</div>
+    <h2>Inventario</h2>
+    <p>Control de productos</p>
   </div>
 
-  <button class="nav-btn right" onclick="nextCard()">❯</button>
-</div>
+  <div class="dashboard-card" data-link="/catalogo.html">
+    <div class="icon">📚</div>
+    <h2>Catálogo</h2>
+    <p>Lista de productos</p>
+  </div>
 
-<script src="/js/carousel.js"></script>
+  <div class="dashboard-card" data-link="/entradas.html">
+    <div class="icon">⬇️</div>
+    <h2>Entradas</h2>
+    <p>Ingreso de mercancía</p>
+  </div>
+
+  <div class="dashboard-card" data-link="/salidas.html">
+    <div class="icon">⬆️</div>
+    <h2>Salidas</h2>
+    <p>Salida de productos</p>
+  </div>
+
+  <div class="dashboard-card admin-only" data-link="/admin-usuarios.html">
+    <div class="icon">🧑‍💼</div>
+    <h2>Usuarios</h2>
+    <p>Administración</p>
+  </div>
+
+</section>
 
 <script>
+/* CLICK EN CARD */
+document.querySelectorAll('.dashboard-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const link = card.dataset.link;
+    if (link) window.location.href = link;
+  });
+});
+
+/* CONTROL ADMIN */
 fetch('/session-info')
   .then(res => res.json())
   .then(data => {

@@ -322,3 +322,92 @@ button:hover {
 .register-card p {
   color: #666;
 }
+
+
+/* ===== DASHBOARD GRID ===== */
+
+body.dashboard-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0f4c81, #020617);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* HEADER ARRIBA Y CENTRADO */
+.dashboard-header {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* TÍTULO */
+.title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #e0f7ff;
+}
+
+/* SUBTÍTULO */
+.subtitle {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #8bdcff;
+  opacity: 0.85;
+}
+
+
+.dashboard-grid {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+/* CARD */
+.dashboard-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 24px;
+  padding: 30px;
+
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+
+  box-shadow: 0 25px 60px rgba(0,0,0,.45);
+
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+/* HOVER */
+.dashboard-card:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow:
+    0 35px 80px rgba(0,153,255,.6),
+    0 0 30px rgba(0,153,255,.3);
+}
+
+/* ICON */
+.dashboard-card .icon {
+  font-size: 52px;
+  margin-bottom: 12px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* TEXTO */
+.dashboard-card h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.dashboard-card p {
+  font-size: 14px;
+  opacity: .85;
+}
+
